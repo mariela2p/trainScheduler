@@ -12,9 +12,10 @@ var config = {
   var name = "";
   var destination = "";
   var time = "";
-  var frequency = 0;
+  var frequency = "";
   var nextTrain = "";
   var minAway = 0;
+  var remainder ;
 
 // set the on click function for the submit button
 $("#add-train").on("click", function(event){ 
@@ -34,7 +35,10 @@ $("#add-train").on("click", function(event){
 		name: name,
 		destination: destination,
 		time: time,
-		frequency: frequency
+		frequency: frequency,
+		nextTrain: nextTrain,
+		minAway: minAway,
+		remainder: remainder
 		//dateAdded: firebase.database.ServerValue.TIMESTAMP
 
 	});
@@ -77,10 +81,10 @@ var firstTimeConverted = moment(time, "hh:mm").subtract(1, "years");
 
 
 // Append train info to the tbody
-$("tbody").append("<tr>" + 	"<td>" + name + "</td>" +
-							"<td>" + destination + "</td>" +
-	    					"<td>" + frequency + "</td>" + 
-	    					"<td>" + nextTrain + "</td>" +
+$("tbody").append("<tr>" + 	"<td>" + childSnapshot.val().name + "</td>" +
+							"<td>" + childSnapshot.val().destination + "</td>" +
+	    					"<td>" + childSnapshot.val().frequency + "</td>" + 
+	    					"<td>" + moment(nextTrain).format("hh:mm") + "</td>" +
 	    					"<td>" + minAway + "</td>" + "</tr>");
 }, function(errorObject) {
 
