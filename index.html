@@ -16,6 +16,9 @@
 
   <!-- LINK TO CSS FILE -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Moment JS Link ???-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -46,12 +49,6 @@
                 </thead>
 
                 <tbody>
-                  <td id="nameDisplay"></td>
-                  <td id="destinationDisplay"></td>
-                  <td id="frequencyDisplay"></td>
-                  <td id="nextArrivalDisplay"></td>
-                  <td id="minutesDisplay"></td>
-                  
                 </tbody>
                 
             </table>
@@ -72,7 +69,7 @@
             </div>
             <div class="form-group">
               <label for="destinationInput">Destination:</label>
-              <input class="form-control" id="destinationInput" type="email">
+              <input class="form-control" id="destinationInput" type="text">
             </div>
             <div class="form-group">
               <label for="timeInput">First Train Time(HH:mm - military time):</label>
@@ -80,9 +77,9 @@
             </div>
             <div class="form-group">
               <label for="frequencyInput">Frequency (min):</label>
-              <input class="form-control" id="frequencyInput" type="email">
+              <input class="form-control" id="frequencyInput" type="text">
             </div>
-            <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            <button class="btn btn-default" id="add-train" type="submit">Submit</button>
           </form>
         </div>
     </div>
@@ -91,7 +88,11 @@
 
   
 
-  <!-- LINK TO FIREBASE -->
+  <!-- LINK TO FIREBASE<td id="nameDisplay"></td>
+                  <td id="destinationDisplay"></td>
+                  <td id="frequencyDisplay"></td>
+                  <td id="nextArrivalDisplay"></td>
+                  <td id="minutesDisplay"></td> -->
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 
   <!-- LINK TO JS FILE -->
